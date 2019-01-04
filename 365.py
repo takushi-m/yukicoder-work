@@ -7,12 +7,13 @@ if all([i+1==al[i] for i in range(n)]):
     exit()
 
 cnt = 0
-if al[0]==1:
-    cnt += 1
-c = al[0]
-for i in range(1,n):
-    if c<al[i]:
-        c = al[i]
-    else:
+maxN = n
+for i in range(n-1,-1,-1):
+    # print(i,maxN)
+    if al[i]!=maxN:
         cnt += 1
+    else:
+        maxN -= 1
+
+
 print(cnt)
